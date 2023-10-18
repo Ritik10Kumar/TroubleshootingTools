@@ -19,7 +19,7 @@ const ping_controller = (req, res) => {
         if (code === 0) {
             res.status(200).send(output)
         } else {
-            res.status(500).send(`${req.body.ip} is not reachable`)
+            res.status(200).send(`${req.body.ip} is not reachable`)
         }
     });
 }
@@ -38,7 +38,7 @@ const ipconfig_controller = (req, res) => {
         if (code === 0) {
             res.status(200).send(output)
         } else {
-            res.status(500).send('command is not reachable')
+            res.status(200).send('command is not reachable')
         }
     });
 }
@@ -56,7 +56,7 @@ const netstat_controller = (req, res) => {
         if (code === 0) {
             res.status(200).send(output)
         } else {
-            res.status(500).send('command is not reachable')
+            res.status(200).send('command is not reachable')
         }
     });
 }
