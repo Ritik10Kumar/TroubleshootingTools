@@ -157,43 +157,25 @@ const udp_controller = (req, res) => {
 }
 
 const nmap_controller = (req, res) => {
-    // console.log(req.body)
-    // exec(`nmap -v  ${req.body.ip} `, (err, stdout, stderr) => {
-    //     if (err) {
-    //         console.log('A')
-    //         console.log(`error: ${err.message}`);
-    //         res.status(200).send(err)
-    //     }
-    //     else if (stderr) {
-    //         console.log('B')
-    //         console.log(`stderr: ${stderr}`);
-    //         res.status(200).send(stderr)
-    //     }
-    //     else {
-    //         console.log('C')
-    //         console.log(`stdout: ${stderr}`);
-    //         res.status(200).send(stdout)
-    //     }
-    // })
-    const nmapProcess = exec(`nmap -sn ${req.body.ip}`);
-
-    // Capture the standard output and error
-    nmapProcess.stdout.on('data', (data) => {
-        console.log(`Nmap Output: ${data}`);
-    });
-
-    nmapProcess.stderr.on('data', (data) => {
-        console.error(`Error: ${data}`);
-    });
-
-    // Handle the process exit
-    nmapProcess.on('exit', (code) => {
-        if (code === 0) {
-            console.log('Nmap command completed successfully.');
-        } else {
-            console.error(`Nmap command exited with code ${code}`);
+    console.log(req.body)
+    exec(`nmap -v  ${req.body.ip} `, (err, stdout, stderr) => {
+        if (err) {
+            console.log('A')
+            console.log(`error: ${err.message}`);
+            res.status(200).send(err)
         }
-    });
+        else if (stderr) {
+            console.log('B')
+            console.log(`stderr: ${stderr}`);
+            res.status(200).send(stderr)
+        }
+        else {
+                console.log('C')
+            console.log(`stdout: ${stderr}`);
+            res.status(200).send(stdout)
+        }
+        })
+    
 }
 
 
@@ -205,14 +187,14 @@ const nmap_controller = (req, res) => {
 
 
 module.exports = {
-    ping_controller, //done
-    ipconfig_controller, //done
-    netstat_controller, //done
-    nslookup_controller, //done
-    tracepath_controller, //done
-    nmap_controller,
-    telnet_controller,
-    udp_controller,
+    ping_controller, //done     ON FROINTEND
+    ipconfig_controller, //done   ON FRONTEND
+    netstat_controller, //done       
+    nslookup_controller, //done       ON FRONTEND
+    tracepath_controller, //done       ON FRONTEND
+    nmap_controller, //                 ON FRONTEND
+    udp_controller,//                     ON FRONTEND not use in Windows
+    telnet_controller, // not in nuse       need add autotime out to exit command
 }
 
 
