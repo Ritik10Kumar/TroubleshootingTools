@@ -29,6 +29,16 @@ module.exports = {
       useUnifiedTopology: true,
     },
   },
+
+  email: {
+    "service": "gmail",
+    "service_port": 465,
+    "name": "Harsh Suryavanshi",
+    "user": "harshsuryavanshi170@gmail.com",
+    "pass": "bvxh skhy qonb tsel",
+    "subject": "Mail",
+    "from": "harshsuryavanshi170@gmail.com"
+  },
   
 };
 

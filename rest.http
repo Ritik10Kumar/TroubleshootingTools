@@ -6,7 +6,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "ip":"127.0.0.1"
+    "ip":"192.168.153.131"
 }
 
 //NMAP API
@@ -28,7 +28,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "ip":"127.0.0.1"
+    "ip":"google.com"
 }
 
 
@@ -38,6 +38,10 @@ POST http://127.0.0.1:8181/v1/troubleshoot/telnet
 Accept: application/json
 Content-Type: application/json
 
+{
+    "ip":"google.com",
+    "port":443
+}
 
 //UDP API
 ###
@@ -76,3 +80,8 @@ Accept: application/json
 Content-Type: application/json
 
 
+//MAIL API
+###
+GET http://127.0.0.1:8181/v1/troubleshoot/mailer
+Accept: application/json
+Content-Type: application/json
