@@ -6,7 +6,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "ip":"192.168.153.131"
+    "ip":"0.0.0.0"
 }
 
 //NMAP API
@@ -32,6 +32,16 @@ Content-Type: application/json
 }
 
 
+//TRACEROUTE API
+###
+POST http://127.0.0.1:8181/v1/troubleshoot/traceroute
+Accept: application/json
+Content-Type: application/json
+
+{
+    "ip":"google.com"
+}
+
 //TELNET API
 ###
 POST http://127.0.0.1:8181/v1/troubleshoot/telnet
@@ -48,6 +58,11 @@ Content-Type: application/json
 POST http://127.0.0.1:8181/v1/troubleshoot/udp
 Accept: application/json
 Content-Type: application/json
+
+{
+    "ip":"www.google.com",
+    "port":443
+}
 
 
 
